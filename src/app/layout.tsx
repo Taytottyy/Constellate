@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Constellate Strategy Group",
   description:
-    "An intercollegiate pro-bono consulting firm connecting ambitious students with small businesses and nonprofits that need strategic support.",
+    "Constellate is an intercollegiate pro-bono consulting firm bridging the gap between ambitious student talent and under-resourced startups, small businesses, and nonprofits.",
 };
 
 export default function RootLayout({

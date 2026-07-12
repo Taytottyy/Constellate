@@ -84,11 +84,11 @@ export function AboutUs() {
               Our Mission
             </h2>
             <p className="mt-6 text-base leading-relaxed text-gray-muted md:text-lg md:leading-relaxed">
-              Constellate is an intercollegiate pro-bono consulting firm that connects
-              student talent with small businesses and nonprofit organizations, helping
-              under-resourced and underserved organizations solve real-world challenges
-              while giving aspiring business leaders hands-on consulting experience, career
-              development, and opportunities to create tangible community impact.
+              Constellate is an intercollegiate pro-bono consulting firm bridging the gap
+              between ambitious student talent and under-resourced startups, small
+              businesses, and nonprofits. We aim to solve complex, real-world strategic
+              challenges while providing tangible, career-defining leadership experience
+              to undergraduates.
             </p>
           </motion.div>
 
