@@ -4,60 +4,68 @@ type TeamMember = {
   university: string;
   bio: string;
   linkedinUrl: string;
+  image?: string;
 };
 
 export const executiveTeam: TeamMember[] = [
   {
-    name: "Taylor Ye",
-    role: "Founder & CEO",
-    university: "University of X",
-    bio: "Leads Constellate's vision to connect student talent with organizations that need strategic support.",
+    name: "Amber Lin",
+    role: "CEO & Co-founder",
+    university: "",
+    bio: "Leads Constellate's vision and strategy, connecting student talent with organizations that need strategic support.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/amber-lin.png",
   },
   {
-    name: "[Name]",
-    role: "COO",
-    university: "University of X",
+    name: "Sophia Feng",
+    role: "CEO & Co-founder",
+    university: "",
+    bio: "Co-leads Constellate's growth and partnerships, building an intercollegiate community of student consultants.",
+    linkedinUrl: "https://linkedin.com",
+    image: "/team/sophia-feng.png",
+  },
+  {
+    name: "Taylor Ye",
+    role: "CTO & Co-founder",
+    university: "",
+    bio: "Builds Constellate's technology and digital infrastructure to support teams, clients, and operations.",
+    linkedinUrl: "https://linkedin.com",
+    image: "/team/taylor-ye.png",
+  },
+  {
+    name: "Doris Vo",
+    role: "COO & Co-founder",
+    university: "",
     bio: "Oversees day-to-day operations and ensures every engagement runs smoothly from kickoff to delivery.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/doris-vo.png",
   },
   {
-    name: "[Name]",
-    role: "Head of Client Partnerships",
-    university: "University of X",
-    bio: "Builds relationships with small businesses and nonprofits to match them with the right consulting teams.",
+    name: "Allison Chen",
+    role: "Director of Advisory Board",
+    university: "",
+    bio: "Guides Constellate's advisory board and connects leadership with mentors and industry expertise.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/allison-chen.png",
   },
   {
-    name: "[Name]",
-    role: "Head of Recruiting",
-    university: "University of X",
-    bio: "Sources and develops top student talent from partner universities across the country.",
+    name: "Bridget Lu",
+    role: "CMO",
+    university: "",
+    bio: "Shapes Constellate's brand and marketing, telling the story of student-led impact across communities.",
     linkedinUrl: "https://linkedin.com",
-  },
-  {
-    name: "[Name]",
-    role: "Head of Marketing",
-    university: "University of X",
-    bio: "Shapes Constellate's brand and tells the story of student-led impact in communities nationwide.",
-    linkedinUrl: "https://linkedin.com",
-  },
-  {
-    name: "[Name]",
-    role: "Director of Operations",
-    university: "University of X",
-    bio: "Manages project workflows and internal systems that keep our consulting teams organized and effective.",
-    linkedinUrl: "https://linkedin.com",
+    image: "/team/bridget-lu.png",
   },
 ];
 
 export function getInitials(name: string): string {
-  return name
-    .replace(/\[|\]/g, "")
-    .split(" ")
-    .filter(Boolean)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase() || "?";
+  return (
+    name
+      .split(" ")
+      .filter(Boolean)
+      .map((part) => part[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase() || "?"
+  );
 }

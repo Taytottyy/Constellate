@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -47,7 +46,13 @@ export function ContactCTA() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               nativeButton={false}
-              render={<Link href="mailto:hello@constellate.org" />}
+              render={
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeYNEiDOvmzXweKklYl985uoGV7RR_76-Y2sajVHeAUngu_ZA/viewform?usp=sharing&ouid=114681356999768003800"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               variant="gold"
               size="lg"
               className="w-full sm:w-auto"
@@ -56,7 +61,13 @@ export function ContactCTA() {
             </Button>
             <Button
               nativeButton={false}
-              render={<Link href="/team" />}
+              render={
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfhuqtybNI6RuZfxReG2hIwvzLBhNjKLuWqhSkRLn_mOMGqFQ/viewform?usp=sharing&ouid=114681356999768003800"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               variant="navy-outline"
               size="lg"
               className="w-full sm:w-auto"

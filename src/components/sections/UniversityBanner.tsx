@@ -5,38 +5,35 @@ import { cn } from "@/lib/utils";
 type University = {
   name: string;
   logo: string;
-  logoHeight: number;
+  width: number;
+  height: number;
 };
 
 const universities: University[] = [
-  { name: "Stanford University", logo: "/logos/stanford.svg", logoHeight: 28 },
-  { name: "MIT", logo: "/logos/mit.svg", logoHeight: 36 },
-  { name: "Columbia University", logo: "/logos/columbia.svg", logoHeight: 56 },
-  { name: "Princeton University", logo: "/logos/princeton.svg", logoHeight: 56 },
-  { name: "University of Pennsylvania", logo: "/logos/penn.svg", logoHeight: 56 },
+  { name: "University of Pennsylvania", logo: "/logos/penn.svg", width: 72, height: 72 },
+  { name: "Harvard University", logo: "/logos/harvard.svg", width: 160, height: 44 },
+  { name: "Columbia University", logo: "/logos/columbia.png", width: 200, height: 48 },
+  { name: "MIT", logo: "/logos/mit.svg", width: 110, height: 56 },
+  { name: "Princeton University", logo: "/logos/princeton.svg", width: 160, height: 40 },
+  { name: "Stanford University", logo: "/logos/stanford.svg", width: 160, height: 34 },
+  { name: "Wellesley College", logo: "/logos/wellesley.svg", width: 120, height: 72 },
 ];
 
-function UniversityCard({ name, logo, logoHeight }: University) {
+function UniversityCard({ name, logo, width, height }: University) {
   return (
     <div
       className={cn(
-        "flex w-44 shrink-0 flex-col items-center gap-3 rounded-lg bg-white p-5 shadow-sm",
-        "md:w-48"
+        "flex h-28 w-48 shrink-0 items-center justify-center rounded-lg bg-white px-6 py-4 shadow-sm",
+        "md:h-32 md:w-52"
       )}
     >
-      <div className="flex h-16 w-full items-center justify-center">
-        <Image
-          src={logo}
-          alt={`${name} logo`}
-          width={120}
-          height={logoHeight}
-          className="max-h-16 w-auto object-contain"
-          style={{ height: logoHeight, width: "auto" }}
-        />
-      </div>
-      <p className="text-center text-xs font-medium leading-snug text-navy md:text-sm">
-        {name}
-      </p>
+      <Image
+        src={logo}
+        alt={`${name} logo`}
+        width={width}
+        height={height}
+        className="max-h-16 w-auto object-contain md:max-h-20"
+      />
     </div>
   );
 }

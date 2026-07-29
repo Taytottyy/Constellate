@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { executiveTeam, getInitials } from "@/data/team";
@@ -57,26 +57,37 @@ export function TeamLeadership() {
         >
           {executiveTeam.map((member) => (
             <motion.article
-              key={member.role}
+              key={member.name}
               variants={cardVariants}
               className={cn(
                 "flex flex-col items-center rounded-xl border border-navy/8 bg-white p-8 text-center shadow-sm",
                 "transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               )}
             >
-              <div
-                className="flex size-24 items-center justify-center rounded-full bg-gray-light text-xl font-semibold text-navy"
-                aria-hidden
-              >
-                {getInitials(member.name)}
-              </div>
+              {member.image ? (
+                <div className="relative size-24 overflow-hidden rounded-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={96}
+                    height={96}
+                    className="size-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="flex size-24 items-center justify-center rounded-full bg-gray-light text-xl font-semibold text-navy"
+                  aria-hidden
+                >
+                  {getInitials(member.name)}
+                </div>
+              )}
 
               <h3 className="mt-5 text-lg font-bold text-navy">{member.name}</h3>
               <p className="mt-1 text-sm font-semibold text-gold">{member.role}</p>
-              <p className="mt-1 text-xs text-gray-muted">{member.university}</p>
-              <p className="mt-4 text-sm leading-relaxed text-gray-muted">
-                {member.bio}
-              </p>
+              {member.university ? (
+                <p className="mt-1 text-xs text-gray-muted">{member.university}</p>
+              ) : null}
 
               <a
                 href={member.linkedinUrl}
@@ -128,12 +139,14 @@ export function JoinTeamCTA() {
           <p className="mt-4 text-base leading-relaxed text-white/75 md:text-lg">
             We recruit driven students from universities across the country.
           </p>
-          <Link
-            href="/join"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfhuqtybNI6RuZfxReG2hIwvzLBhNjKLuWqhSkRLn_mOMGqFQ/viewform?usp=sharing&ouid=114681356999768003800"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex h-12 items-center justify-center rounded-lg bg-gold px-8 text-base font-semibold text-navy transition-colors hover:bg-gold-light"
           >
             Apply Now
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

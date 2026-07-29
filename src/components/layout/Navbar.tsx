@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -42,15 +43,20 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-6 md:h-18 md:px-12 lg:px-16">
+      <div className="container mx-auto flex h-16 items-center justify-between px-6 md:h-20 md:px-12 lg:px-16">
         <Link
           href="/"
-          className={cn(
-            "font-heading text-lg font-semibold tracking-tight transition-colors md:text-xl",
-            scrolled ? "text-navy" : "text-white"
-          )}
+          className="relative flex shrink-0 items-center"
+          aria-label="Constellate Strategy Group home"
         >
-          Constellate Strategy Group
+          <Image
+            src="/logo.png"
+            alt="Constellate Strategy Group"
+            width={712}
+            height={202}
+            priority
+            className="h-9 w-auto md:h-11"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -71,7 +77,13 @@ export function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <Button
             nativeButton={false}
-            render={<Link href="/#contact" />}
+            render={
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeYNEiDOvmzXweKklYl985uoGV7RR_76-Y2sajVHeAUngu_ZA/viewform?usp=sharing&ouid=114681356999768003800"
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             variant={scrolled ? "outline" : "navy-outline"}
             size="sm"
             className={cn(scrolled && "border-navy/30 text-navy hover:bg-navy/5")}
@@ -80,7 +92,13 @@ export function Navbar() {
           </Button>
           <Button
             nativeButton={false}
-            render={<Link href="/team" />}
+            render={
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfhuqtybNI6RuZfxReG2hIwvzLBhNjKLuWqhSkRLn_mOMGqFQ/viewform?usp=sharing&ouid=114681356999768003800"
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             variant="gold"
             size="sm"
           >
@@ -118,7 +136,13 @@ export function Navbar() {
             <div className="mt-4 flex flex-col gap-3">
               <Button
                 nativeButton={false}
-                render={<Link href="/#contact" />}
+                render={
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSeYNEiDOvmzXweKklYl985uoGV7RR_76-Y2sajVHeAUngu_ZA/viewform?usp=sharing&ouid=114681356999768003800"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
                 variant="outline"
                 className="w-full border-navy/30 text-navy"
                 onClick={() => setMobileOpen(false)}
@@ -127,7 +151,13 @@ export function Navbar() {
               </Button>
               <Button
                 nativeButton={false}
-                render={<Link href="/team" />}
+                render={
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfhuqtybNI6RuZfxReG2hIwvzLBhNjKLuWqhSkRLn_mOMGqFQ/viewform?usp=sharing&ouid=114681356999768003800"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
                 variant="gold"
                 className="w-full"
                 onClick={() => setMobileOpen(false)}
