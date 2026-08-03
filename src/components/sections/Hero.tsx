@@ -125,17 +125,6 @@ export function Hero() {
             animate="visible"
             variants={containerVariants}
           >
-            <motion.p
-              variants={itemVariants}
-              className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/80 md:text-xl"
-            >
-              Constellate is an intercollegiate pro-bono consulting firm bridging the gap
-              between ambitious student talent and under-resourced startups, small
-              businesses, and nonprofits. We aim to solve complex, real-world strategic
-              challenges while providing tangible, career-defining leadership experience
-              to undergraduates.
-            </motion.p>
-
             <motion.div
               variants={itemVariants}
               className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"

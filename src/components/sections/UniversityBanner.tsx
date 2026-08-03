@@ -63,10 +63,10 @@ export function UniversityBanner() {
   return (
     <section
       className="marquee-banner overflow-hidden bg-gray-light py-12 md:py-14"
-      aria-label="Our university partners"
+      aria-label="Our members are from"
     >
       <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-gold">
-        Our University Partners
+        Our Members Are From
       </p>
 
       <div className="relative">
