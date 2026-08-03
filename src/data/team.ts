@@ -10,7 +10,7 @@ type TeamMember = {
 export const executiveTeam: TeamMember[] = [
   {
     name: "Amber Lin",
-    role: "CEO & Co-founder",
+    role: "CEO & Co-Founder",
     university: "",
     bio: "Leads Constellate's vision and strategy, connecting student talent with organizations that need strategic support.",
     linkedinUrl: "https://linkedin.com",
@@ -18,7 +18,7 @@ export const executiveTeam: TeamMember[] = [
   },
   {
     name: "Sophia Feng",
-    role: "CEO & Co-founder",
+    role: "CEO & Co-Founder",
     university: "",
     bio: "Co-leads Constellate's growth and partnerships, building an intercollegiate community of student consultants.",
     linkedinUrl: "https://linkedin.com",
@@ -26,7 +26,7 @@ export const executiveTeam: TeamMember[] = [
   },
   {
     name: "Taylor Ye",
-    role: "CTO & Co-founder",
+    role: "CTO & Co-Founder",
     university: "",
     bio: "Builds Constellate's technology and digital infrastructure to support teams, clients, and operations.",
     linkedinUrl: "https://linkedin.com",
@@ -34,7 +34,7 @@ export const executiveTeam: TeamMember[] = [
   },
   {
     name: "Doris Vo",
-    role: "COO & Co-founder",
+    role: "COO & Co-Founder",
     university: "",
     bio: "Oversees day-to-day operations and ensures every engagement runs smoothly from kickoff to delivery.",
     linkedinUrl: "https://linkedin.com",
@@ -50,7 +50,7 @@ export const executiveTeam: TeamMember[] = [
   },
   {
     name: "Bridget Lu",
-    role: "CMO",
+    role: "Director of Product & Innovation",
     university: "",
     bio: "Shapes Constellate's brand and marketing, telling the story of student-led impact across communities.",
     linkedinUrl: "https://linkedin.com",

@@ -12,9 +12,9 @@ type University = {
 const universities: University[] = [
   { name: "University of Pennsylvania", logo: "/logos/penn.svg", width: 72, height: 72 },
   { name: "Harvard University", logo: "/logos/harvard.svg", width: 160, height: 44 },
-  { name: "Columbia University", logo: "/logos/columbia.png", width: 200, height: 48 },
+  { name: "Columbia University", logo: "/logos/columbia.png", width: 90, height: 90 },
   { name: "MIT", logo: "/logos/mit.svg", width: 110, height: 56 },
-  { name: "Princeton University", logo: "/logos/princeton.svg", width: 160, height: 40 },
+  { name: "Princeton University", logo: "/logos/princeton.png", width: 72, height: 80 },
   { name: "Stanford University", logo: "/logos/stanford.svg", width: 160, height: 34 },
   { name: "Wellesley College", logo: "/logos/wellesley.svg", width: 120, height: 72 },
 ];
@@ -23,8 +23,8 @@ function UniversityCard({ name, logo, width, height }: University) {
   return (
     <div
       className={cn(
-        "flex h-28 w-48 shrink-0 items-center justify-center rounded-lg bg-white px-6 py-4 shadow-sm",
-        "md:h-32 md:w-52"
+        "flex h-28 w-48 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white px-5 py-4 shadow-sm",
+        "md:h-32 md:w-52 md:px-6"
       )}
     >
       <Image
@@ -32,7 +32,7 @@ function UniversityCard({ name, logo, width, height }: University) {
         alt={`${name} logo`}
         width={width}
         height={height}
-        className="max-h-16 w-auto object-contain md:max-h-20"
+        className="max-h-14 max-w-full object-contain md:max-h-16"
       />
     </div>
   );
