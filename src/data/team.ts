@@ -62,6 +62,7 @@ export const executiveTeam: TeamMember[] = [
     university: "",
     bio: "Builds and maintains relationships with Constellate's clients, ensuring every partnership is set up for success.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/trisha-liu.png",
   },
   {
     name: "Hafsa Sheikh",
@@ -69,6 +70,7 @@ export const executiveTeam: TeamMember[] = [
     university: "",
     bio: "Leads Constellate's management consulting practice, guiding teams through strategy and organizational engagements.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/hafsa-sheikh.png",
   },
   {
     name: "Ananya Karthik",
@@ -76,6 +78,7 @@ export const executiveTeam: TeamMember[] = [
     university: "",
     bio: "Leads Constellate's marketing consulting practice, helping clients sharpen their brand and reach the right audiences.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/ananya-karthik.png",
   },
   {
     name: "Celine Shin",
@@ -83,6 +86,7 @@ export const executiveTeam: TeamMember[] = [
     university: "",
     bio: "Leads Constellate's research and insights work, turning market and client data into actionable recommendations.",
     linkedinUrl: "https://linkedin.com",
+    image: "/team/celine-shin.png",
   },
 ];
 

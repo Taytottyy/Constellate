@@ -48,7 +48,7 @@ export function TeamLeadership() {
         </div>
 
         <motion.div
-          className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-3"
           initial={shouldReduceMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
@@ -58,7 +58,7 @@ export function TeamLeadership() {
             <motion.article
               key={member.name}
               variants={cardVariants}
-              className="flex flex-col bg-navy p-4 pb-5 transition-colors duration-300 hover:bg-navy-light md:p-5 md:pb-6"
+              className="flex flex-col bg-navy p-4 pb-5 outline outline-1 outline-rule transition-colors duration-300 hover:bg-navy-light md:p-5 md:pb-6"
             >
               <div className="relative aspect-square overflow-hidden bg-navy-light">
                 {member.image ? (
