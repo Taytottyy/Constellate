@@ -17,12 +17,12 @@ export const executiveTeam: TeamMember[] = [
     image: "/team/amber-lin.png",
   },
   {
-    name: "Sophia Feng",
+    name: "Sofia Feng",
     role: "CEO & Co-Founder",
     university: "",
     bio: "Co-leads Constellate's growth and partnerships, building an intercollegiate community of student consultants.",
     linkedinUrl: "https://linkedin.com",
-    image: "/team/sophia-feng.png",
+    image: "/team/sofia-feng.png",
   },
   {
     name: "Taylor Ye",
