@@ -48,7 +48,11 @@ const config: Config = {
         gold: {
           DEFAULT: "var(--gold)",
           light: "var(--gold-light)",
+          deep: "var(--gold-deep)",
         },
+        paper: "var(--paper)",
+        cream: "var(--cream)",
+        rule: "var(--rule)",
         "gray-light": "var(--gray-light)",
         "gray-muted": "var(--gray-muted)",
       },
@@ -60,6 +64,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         heading: ["var(--font-playfair)", "Georgia", "serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "Times New Roman", "serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
       },
     },
   },

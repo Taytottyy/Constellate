@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { executiveTeam, getInitials } from "@/data/team";
-import { cn } from "@/lib/utils";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -21,7 +20,7 @@ function LinkedInIcon({ className }: { className?: string }) {
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
 const cardVariants: Variants = {
@@ -37,19 +36,19 @@ export function TeamLeadership() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-gray-light py-20 md:py-28">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold">
+    <section className="bg-paper px-6 py-20 md:px-12 md:py-28 lg:px-16">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid gap-4 border-b border-rule pb-8 md:grid-cols-[160px_1fr] md:gap-8">
+          <p className="pt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-gold-deep">
             Leadership
           </p>
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-navy md:text-4xl">
-            Executive Team
+          <h2 className="font-serif text-3xl font-normal tracking-[-0.01em] text-navy md:text-[33px]">
+            The <em className="text-gold-deep">executive team.</em>
           </h2>
         </div>
 
         <motion.div
-          className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
+          className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3"
           initial={shouldReduceMotion ? "visible" : "hidden"}
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
@@ -59,45 +58,49 @@ export function TeamLeadership() {
             <motion.article
               key={member.name}
               variants={cardVariants}
-              className={cn(
-                "flex flex-col items-center rounded-xl border border-navy/8 bg-white p-8 text-center shadow-sm",
-                "transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              )}
+              className="flex flex-col bg-navy p-4 pb-5 transition-colors duration-300 hover:bg-navy-light md:p-5 md:pb-6"
             >
-              {member.image ? (
-                <div className="relative size-24 overflow-hidden rounded-full">
+              <div className="relative aspect-square overflow-hidden bg-navy-light">
+                {member.image ? (
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={96}
-                    height={96}
-                    className="size-full object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top"
                   />
-                </div>
-              ) : (
-                <div
-                  className="flex size-24 items-center justify-center rounded-full bg-gray-light text-xl font-semibold text-navy"
-                  aria-hidden
-                >
-                  {getInitials(member.name)}
-                </div>
-              )}
+                ) : (
+                  <div
+                    className="grid size-full place-items-center font-serif text-4xl font-medium italic text-cream"
+                    aria-hidden
+                  >
+                    {getInitials(member.name)}
+                  </div>
+                )}
+              </div>
 
-              <h3 className="mt-5 text-lg font-bold text-navy">{member.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-gold">{member.role}</p>
-              {member.university ? (
-                <p className="mt-1 text-xs text-gray-muted">{member.university}</p>
-              ) : null}
-
-              <a
-                href={member.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex size-9 items-center justify-center rounded-lg text-navy/60 transition-colors hover:bg-navy/5 hover:text-navy"
-                aria-label={`${member.name} on LinkedIn`}
-              >
-                <LinkedInIcon className="size-5" />
-              </a>
+              <div className="mt-4">
+                <div className="mb-1 flex items-start justify-between gap-2">
+                  <h3 className="font-serif text-[20.5px] font-medium italic leading-tight tracking-[-0.005em] text-cream">
+                    {member.name}
+                  </h3>
+                  <a
+                    href={member.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-0.5 flex size-[26px] shrink-0 items-center justify-center text-white/50 transition-colors hover:text-gold"
+                    aria-label={`${member.name} on LinkedIn`}
+                  >
+                    <LinkedInIcon className="size-3.5" />
+                  </a>
+                </div>
+                <p className="text-xs text-white/70">{member.role}</p>
+                {member.university ? (
+                  <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-gold">
+                    {member.university}
+                  </p>
+                ) : null}
+              </div>
             </motion.article>
           ))}
         </motion.div>
@@ -119,36 +122,34 @@ export function JoinTeamCTA() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-navy py-20 md:py-24">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(245,166,35,0.1),transparent_60%)]"
-      />
-
-      <div className="container relative mx-auto px-6 md:px-12 lg:px-16">
-        <motion.div
-          className="mx-auto max-w-2xl text-center"
-          initial={shouldReduceMotion ? "visible" : "hidden"}
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={variants}
-        >
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-white md:text-4xl">
-            Want to be part of Constellate?
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-white/75 md:text-lg">
+    <section className="bg-navy px-6 py-20 md:px-12 md:py-24 lg:px-16">
+      <motion.div
+        className="container mx-auto grid max-w-6xl gap-5 md:gap-8 lg:grid-cols-[160px_1fr_1fr]"
+        initial={shouldReduceMotion ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={variants}
+      >
+        <p className="pt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-gold">
+          § &nbsp;Join Us
+        </p>
+        <h2 className="font-serif text-4xl font-normal leading-[1.02] tracking-[-0.02em] text-white md:text-5xl">
+          Want to be part of <em className="text-gold">Constellate?</em>
+        </h2>
+        <div className="pt-3">
+          <p className="max-w-[42ch] font-serif text-lg italic leading-relaxed text-white/80 md:text-xl">
             We recruit driven students from universities across the country.
           </p>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfhuqtybNI6RuZfxReG2hIwvzLBhNjKLuWqhSkRLn_mOMGqFQ/viewform?usp=sharing&ouid=114681356999768003800"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-lg bg-gold px-8 text-base font-semibold text-navy transition-colors hover:bg-gold-light"
+            className="mt-6 inline-flex items-center gap-4 border border-gold bg-gold px-7 py-[18px] text-xs font-medium uppercase tracking-[0.14em] text-navy transition-colors hover:border-gold-light hover:bg-gold-light"
           >
-            Apply Now
+            Apply Now <span aria-hidden>↗</span>
           </a>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

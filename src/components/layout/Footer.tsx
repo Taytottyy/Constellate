@@ -44,10 +44,10 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <p className="font-heading text-xl font-semibold text-white">
+            <p className="font-serif text-[22px] text-white">
               Constellate Strategy Group
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-white/60">
+            <p className="mt-3 font-serif text-[17px] leading-relaxed text-white/60">
               Constellate is an intercollegiate pro-bono consulting firm bridging the gap
               between ambitious student talent and under-resourced startups, small
               businesses, and nonprofits.
@@ -59,7 +59,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/70 transition-colors hover:text-gold"
+                className="font-serif text-[17px] text-white/70 transition-colors hover:text-gold"
               >
                 {link.label}
               </Link>
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-sm text-white/50">
+          <p className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/50">
             &copy; {new Date().getFullYear()} Constellate Strategy Group. All rights
             reserved.
           </p>

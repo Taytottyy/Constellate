@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import {
   FlaskConical,
@@ -8,8 +9,6 @@ import {
   Package,
   type LucideIcon,
 } from "lucide-react";
-
-import { cn } from "@/lib/utils";
 
 type Service = {
   icon: LucideIcon;
@@ -58,16 +57,87 @@ const cardVariants: Variants = {
   },
 };
 
+const faceClass =
+  "absolute inset-0 flex flex-col p-6 [backface-visibility:hidden]";
+
+function FlipCard({ service, index }: { service: Service; index: number }) {
+  const [flipped, setFlipped] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.div variants={cardVariants} className="[perspective:1200px]">
+      <button
+        type="button"
+        onClick={() => setFlipped((isFlipped) => !isFlipped)}
+        aria-pressed={flipped}
+        className="group block h-72 w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+      >
+        <motion.div
+          className="relative size-full [transform-style:preserve-3d]"
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={
+            shouldReduceMotion
+              ? { duration: 0 }
+              : { duration: 0.6, ease: [0.4, 0.2, 0.2, 1] }
+          }
+        >
+          <div
+            className={`${faceClass} border border-rule bg-white transition-colors duration-300 group-hover:border-gold`}
+            aria-hidden={flipped}
+          >
+            <span className="font-mono text-[11px] tracking-[0.1em] text-gold-deep">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <div className="mt-5 flex size-11 items-center justify-center bg-navy text-gold">
+              <service.icon className="size-5" strokeWidth={1.75} aria-hidden />
+            </div>
+            <h3 className="mt-5 font-serif text-[28px] font-normal leading-tight tracking-[-0.01em] text-navy">
+              {service.title}
+            </h3>
+            <span className="mt-auto font-mono text-[10px] uppercase tracking-[0.14em] text-gray-muted transition-colors group-hover:text-gold-deep">
+              Tap to flip ↻
+            </span>
+          </div>
+
+          <div
+            className={`${faceClass} bg-navy [transform:rotateY(180deg)]`}
+            aria-hidden={!flipped}
+          >
+            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-gold">
+              {service.title}
+            </span>
+            <p className="mt-5 font-serif text-xl italic leading-relaxed text-white/90">
+              {service.description}
+            </p>
+            <span className="mt-auto font-mono text-[10px] uppercase tracking-[0.14em] text-white/50 transition-colors group-hover:text-gold">
+              ↺ Flip back
+            </span>
+          </div>
+        </motion.div>
+      </button>
+    </motion.div>
+  );
+}
+
 export function Services() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="services" className="bg-gray-light py-20 md:py-28 lg:py-32">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
+    <section
+      id="services"
+      className="bg-paper px-6 py-20 md:px-12 md:py-28 lg:px-16"
+    >
+      <div className="container mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight text-navy md:text-4xl lg:text-5xl">
-            What We Offer
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-gold-deep">
+            § &nbsp;Our Services
+          </p>
+          <h2 className="mt-5 font-serif text-4xl font-normal leading-[1.02] tracking-[-0.02em] text-navy md:text-5xl">
+            What we <em className="text-gold-deep">offer</em>
           </h2>
+          <p className="mt-5 font-serif text-lg italic text-gray-muted">
+            Tap a card to see what each practice covers.
+          </p>
         </div>
 
         <motion.div
@@ -77,25 +147,8 @@ export function Services() {
           viewport={{ once: true, margin: "-80px" }}
           variants={containerVariants}
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.title}
-              variants={cardVariants}
-              className={cn(
-                "group rounded-xl border border-navy/8 bg-white p-6",
-                "transition-all duration-300 hover:border-gold/30 hover:shadow-md"
-              )}
-            >
-              <div className="flex size-11 items-center justify-center rounded-lg bg-navy/5 text-navy transition-colors group-hover:bg-gold/10 group-hover:text-gold">
-                <service.icon className="size-5" strokeWidth={1.75} aria-hidden />
-              </div>
-              <h3 className="mt-4 font-heading text-xl font-semibold text-navy">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-muted md:text-base">
-                {service.description}
-              </p>
-            </motion.div>
+          {services.map((service, index) => (
+            <FlipCard key={service.title} service={service} index={index} />
           ))}
         </motion.div>
       </div>

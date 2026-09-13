@@ -65,6 +65,11 @@
     --navy-light: #1a3270;
     --gold: #f5a623;
     --gold-light: #f7b84d;
+    /* Darker gold for small text on light backgrounds (readable contrast) */
+    --gold-deep: #a4650a;
+    --paper: #faf9f7;
+    --cream: #f2efe7;
+    --rule: #d9d5c8;
     --gray-light: #f5f5f7;
     --gray-muted: #6b7280;
 

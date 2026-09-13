@@ -56,6 +56,34 @@ export const executiveTeam: TeamMember[] = [
     linkedinUrl: "https://linkedin.com",
     image: "/team/bridget-lu.png",
   },
+  {
+    name: "Trisha Liu",
+    role: "Director of Client Relations",
+    university: "",
+    bio: "Builds and maintains relationships with Constellate's clients, ensuring every partnership is set up for success.",
+    linkedinUrl: "https://linkedin.com",
+  },
+  {
+    name: "Hafsa Sheikh",
+    role: "Director of Management Consulting",
+    university: "",
+    bio: "Leads Constellate's management consulting practice, guiding teams through strategy and organizational engagements.",
+    linkedinUrl: "https://linkedin.com",
+  },
+  {
+    name: "Ananya Karthik",
+    role: "Director of Marketing Consulting",
+    university: "",
+    bio: "Leads Constellate's marketing consulting practice, helping clients sharpen their brand and reach the right audiences.",
+    linkedinUrl: "https://linkedin.com",
+  },
+  {
+    name: "Celine Shin",
+    role: "Director of Research & Insights",
+    university: "",
+    bio: "Leads Constellate's research and insights work, turning market and client data into actionable recommendations.",
+    linkedinUrl: "https://linkedin.com",
+  },
 ];
 
 export function getInitials(name: string): string {

@@ -16,6 +16,9 @@ const navLinks = [
   { href: "/#contact", label: "Contact" },
 ];
 
+const ctaClass =
+  "rounded-none font-sans text-[11px] font-medium uppercase tracking-[0.14em]";
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -65,7 +68,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-gold",
+                "font-serif text-[17px] transition-colors hover:text-gold",
                 scrolled ? "text-navy/80" : "text-white/90"
               )}
             >
@@ -86,7 +89,11 @@ export function Navbar() {
             }
             variant={scrolled ? "outline" : "navy-outline"}
             size="sm"
-            className={cn(scrolled && "border-navy/30 text-navy hover:bg-navy/5")}
+            className={cn(
+              ctaClass,
+              "h-9 px-4",
+              scrolled && "border-navy/30 text-navy hover:bg-navy/5"
+            )}
           >
             Partner With Us
           </Button>
@@ -101,6 +108,7 @@ export function Navbar() {
             }
             variant="gold"
             size="sm"
+            className={cn(ctaClass, "h-9 px-4")}
           >
             Join our Team
           </Button>
@@ -127,7 +135,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-base font-medium text-navy"
+                className="font-serif text-xl text-navy"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -144,7 +152,7 @@ export function Navbar() {
                   />
                 }
                 variant="outline"
-                className="w-full border-navy/30 text-navy"
+                className={cn(ctaClass, "h-11 w-full border-navy/30 text-navy")}
                 onClick={() => setMobileOpen(false)}
               >
                 Partner With Us
@@ -159,7 +167,7 @@ export function Navbar() {
                   />
                 }
                 variant="gold"
-                className="w-full"
+                className={cn(ctaClass, "h-11 w-full")}
                 onClick={() => setMobileOpen(false)}
               >
                 Join our Team
