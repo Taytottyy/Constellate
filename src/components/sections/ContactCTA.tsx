@@ -37,7 +37,7 @@ export function ContactCTA() {
           <h2 className="font-heading text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
             Ready to Make an Impact?
           </h2>
-          <p className="mt-5 font-serif text-lg italic leading-relaxed text-white/80 md:text-xl">
+          <p className="mt-5 font-serif text-lg leading-relaxed text-white/80 md:text-xl">
             Whether you&apos;re a small business, nonprofit, or ambitious student —
             Constellate Strategy Group is building partnerships that create real change. Reach out
             to learn how we can work together.

@@ -30,7 +30,7 @@ export function AboutUs() {
           <h2 className="font-heading text-3xl font-semibold leading-tight tracking-tight text-navy md:text-4xl lg:text-5xl">
             Our Mission
           </h2>
-          <p className="mt-6 font-serif text-xl italic leading-relaxed text-navy md:text-2xl md:leading-relaxed">
+          <p className="mt-6 font-serif text-xl leading-relaxed text-navy md:text-2xl md:leading-relaxed">
             Constellate is an intercollegiate pro-bono consulting firm bridging the gap
             between ambitious student talent and under-resourced startups, small
             businesses, and nonprofits. We aim to solve complex, real-world strategic
