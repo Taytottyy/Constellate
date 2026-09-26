@@ -41,12 +41,12 @@ export const executiveTeam: TeamMember[] = [
     image: "/team/doris-vo.png",
   },
   {
-    name: "Allison Chen",
+    name: "Simon Sang",
     role: "Director of Advisory Board",
     university: "",
     bio: "Guides Constellate's advisory board and connects leadership with mentors and industry expertise.",
     linkedinUrl: "https://linkedin.com",
-    image: "/team/allison-chen.png",
+    image: "/team/simon-sang.png",
   },
   {
     name: "Bridget Lu",

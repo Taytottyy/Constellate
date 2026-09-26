@@ -11,7 +11,6 @@ type University = {
 
 const universities: University[] = [
   { name: "University of Pennsylvania", logo: "/logos/penn.svg", width: 72, height: 72 },
-  { name: "Harvard University", logo: "/logos/harvard.svg", width: 160, height: 44 },
   { name: "Columbia University", logo: "/logos/columbia.png", width: 90, height: 90 },
   { name: "MIT", logo: "/logos/mit.svg", width: 110, height: 56 },
   { name: "Princeton University", logo: "/logos/princeton.png", width: 72, height: 80 },
